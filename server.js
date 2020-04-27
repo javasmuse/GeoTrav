@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/api/v1/stores", require("./routes/stores"));
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () =>
   console.log(
