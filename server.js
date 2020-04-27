@@ -26,7 +26,7 @@ app.use('/api/v1/stores', require('./routes/stores'));
 
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 
 app.listen(PORT, () =>
   console.log(`Flamingos running in ${process.env.NODE_ENV} mode on port ${PORT}`)
