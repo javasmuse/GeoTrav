@@ -28,6 +28,6 @@ const PORT = process.env.PORT || 80;
 
 app.listen(PORT, () =>
   console.log(
-    `Flamingos running in ${process.env.NODE_ENV} mode on port ${PORT}`
+    `Spoonbills running in ${process.env.NODE_ENV} mode on port ${PORT}`
   )
 );
