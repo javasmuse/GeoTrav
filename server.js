@@ -3,11 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const mongoose = require("mongoose");
 
-db = mongoose.createConnection(
-  "mongodb:://cookie:javaBean@demo-cluster-7te07.mongodb.net/storelocator?retryWrites=true&w=majority"
-);
 // Load environment variables
 dotenv.config({ path: "./config/config.env" });
 
