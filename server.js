@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const serverless = require("serverless-http");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
@@ -19,15 +20,19 @@ app.use(express.json());
 app.use(cors());
 
 // Set static folder
+app.use("/.netlify/functions/server", router); // path must route to lambda
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.use("/api/v1/stores", require("./routes/stores"));
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () =>
   console.log(
     `Spoonbills running in ${process.env.NODE_ENV} mode on port ${PORT}`
   )
 );
+
+module.exports.handler = app;
+module.exports.handler = serverless(app);
